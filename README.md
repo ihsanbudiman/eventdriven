@@ -56,11 +56,18 @@ kalo ingin menambah data bisa mengakses redis container yang berjalan di docker 
 key yang saya pakai untuk mendapatkan user adalah 
 ```
 user:<ID>
+eg: user:4
 ```
-dengan format
+dengan format json string
 ```
 {
   "id": <ID>,
   "name": <Name>
+}
+
+eg:
+{
+  "id": 4,
+  "name": "budiman"
 }
 ```
