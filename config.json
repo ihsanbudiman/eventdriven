@@ -1,0 +1,23 @@
+{
+  "token_hmac_secret_key": "379684ba-cc76-4694-b924-eb97b7efde20",
+  "admin_password": "fab314dd-2070-4f30-b78c-b7fe1f63937f",
+  "admin_secret": "8fe601b7-8042-4489-84b6-308df6466ec1",
+  "api_key": "301864dd-4551-48f5-85fd-c21050ca492b",
+  "allowed_origins": [
+    "*"
+  ],
+  "anonymous": true,
+  "publish": true,
+  "subscribe_to_publish": true,
+  "presence": true,
+  "join_leave": true,
+  "namespace": [
+    {
+      "name": "default",
+      "publish": true,
+      "subscribe_to_publish": true,
+      "presence": true,
+      "join_leave": true
+    }
+  ]
+}

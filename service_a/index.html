@@ -1,0 +1,59 @@
+<html>
+  <head></head>
+  <body>
+    <div>
+      <input id="input" type="text" size="40" />
+      <button onclick="send()">Send</button>
+      <pre id="output"></pre>
+    </div>
+    <style>
+      html {
+        text-align: center;
+        font-size: 16px;
+      }
+      div {
+        padding: 1rem;
+      }
+      #input {
+        font-size: 16px;
+      }
+      p {
+        font-size: 16px;
+      }
+    </style>
+    <script>
+      var input = document.getElementById("input");
+      var output = document.getElementById("output");
+      var socket = new WebSocket("ws://localhost:8080/ws");
+
+      socket.onopen = function () {
+        output.innerHTML += "Status: Connected\n";
+      };
+
+      socket.onmessage = function (e) {
+        console.log(e.data);
+      };
+
+      function send() {
+        const id = input.value;
+
+        // check if id is valid number
+        if (isNaN(id)) {
+          input.value = "";
+          return alert("Invalid ID, ID should be a number");
+        }
+
+        const payload = {
+          id: Number(id),
+        };
+        socket.send(JSON.stringify(payload));
+        input.value = "";
+      }
+
+      socket.onerror = function (err) {
+        console.error("Socket encountered error: ", err.message, "Closing socket");
+        socket.close();
+      };
+    </script>
+  </body>
+</html>
