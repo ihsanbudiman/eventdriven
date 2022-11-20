@@ -6,7 +6,7 @@ cara menjalankan code
 docker compose up -d
 ```
 
-mungkin akan menunggu sedikit lama karena download image, build, dan dependencies. dapet mengakses dengan masuk ke url: http://localhost:8080
+mungkin akan menunggu sedikit lama karena download image, build, dan dependencies. dapat mengakses dengan masuk ke url: http://localhost:8080
 
 data yang tersedia
 
