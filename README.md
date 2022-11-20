@@ -7,7 +7,7 @@ docker compose up -d
 ```
 
 mungkin akan menunggu sedikit lama karena download image, build, dan dependencies.
-dapet mengakses dengan masuk ke url: localhost:8080
+dapet mengakses dengan masuk ke url: http://localhost:8080
 
 data yang tersedia
 ```
@@ -49,5 +49,18 @@ jika tidak ada datanya
   },
   "message": "Data Not Found",
   "success": false
+}
+```
+
+kalo ingin menambah data bisa mengakses redis container yang berjalan di docker compose
+key yang saya pakai untuk mendapatkan user adalah 
+```
+user:<ID>
+```
+dengan format
+```
+{
+  "id": <ID>,
+  "name": <Name>
 }
 ```
